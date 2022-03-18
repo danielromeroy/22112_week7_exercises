@@ -14,7 +14,6 @@ position_before_chunk = 0  # Save position before reading the chunk
 chunk = infile.read(CHUNKSIZE)
 header_starts = []
 while True:
-    first = False
     matches = re.finditer(b">", chunk)  # Find init positions of fasta headers
     positions = [pos.start() for pos in matches]  # Convert iterator into list of positions
     if len(positions) > 0:
